@@ -4,7 +4,10 @@ export class Dashboard {
   groups: any[] = [
     { boards: [{ wide: true }, false, {}, {}] },
     { boards: [{ tall: true }, false, { tall: true }, false] },
-    { boards: [{ tall: true, wide: true }, false, false, false] }
+    { boards: [{ wide: true }, false, { wide: true }, false] },
+    { boards: [{ tall: true, wide: true }, false, false, false] },
+    { boards: [{}, {}, {}, {}] },
+    { boards: [{ tall: true }, {}, false, {}] }
   ];
 
   prev() {
