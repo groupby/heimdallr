@@ -34,6 +34,12 @@
   height: 100%;
 }
 
+.chart-container {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 
 /* Aurelia Styles */
 

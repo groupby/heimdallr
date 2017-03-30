@@ -6,7 +6,7 @@
     <div class="dash-group-container">
       <div repeat.for="group of groups" class="dash-group ${$index === activeIndex ? 'active' : ''}">
         <div repeat.for="board of group.boards" if.bind="board" class="dash-board ${board.wide ? 'wide' : ''} ${board.tall ? 'tall' : ''}">
-          <compose model.bind="board" view-model="elements/board"></compose>
+          <compose model.bind="board" view-model="elements/board" class="chart-container"></compose>
         </div>
       </div>
     </div>

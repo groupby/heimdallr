@@ -93,7 +93,17 @@ let config = generateConfig(
     envDev(ENV !== 'test' ? {} : { devtool: 'inline-source-map' }) :
     envProd({ /* devtool: '...' */ }),
 
-  aurelia({ root: rootDir, src: srcDir, title: title, baseUrl: baseUrl }),
+  aurelia({
+    title,
+    baseUrl,
+    root: rootDir,
+    src: srcDir,
+    includeSubModules: [
+      { moduleId: 'aurelia-chart' },
+      { moduleId: 'chart-attribute' },
+      { moduleId: 'chart-element' }
+    ]
+  }),
   typescript(ENV !== 'test' ? {} : { options: { doTypeCheck: false, sourceMap: false, inlineSourceMap: true, inlineSources: true } }),
   html(),
   css({ filename: 'styles.css', allChunks: true, sourceMap: false }),

@@ -50,8 +50,7 @@
   ],
   "license": "CC0-1.0",
   "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Arjen de Blok"
     },
     {
@@ -64,11 +63,15 @@
   "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
   "aurelia": {
     "build": {
-      "resources": []
+      "resources": [
+        "aurelia-chart/elements/chart-element",
+        "aurelia-chart/attributes/chart-attribute"
+      ]
     }
   },
   "dependencies": {
     "aurelia-bootstrapper-webpack": "^1.1.0",
+    "aurelia-chart": "^0.2.7",
     "aurelia-event-aggregator": "^1.0.0",
     "aurelia-fetch-client": "^1.0.1",
     "aurelia-framework": "^1.0.7",
