@@ -1,3 +1,42 @@
+/* Heimdallr Styles */
+
+.dash-pager {
+  height: 100%;
+  display: flex;
+}
+
+.dash-group-container {
+  flex-grow: 1;
+  /*height: 100%;*/
+}
+
+.dash-group {
+  display: none;
+  height: 100%;
+}
+
+.dash-group.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dash-board {
+  width: 50%;
+  height: 50%;
+  border: 1px solid crimson;
+}
+
+.dash-board.wide {
+  width: 100%;
+}
+
+.dash-board.tall {
+  height: 100%;
+}
+
+
+/* Aurelia Styles */
+
 body {
   margin: 0;
 }
@@ -57,7 +96,9 @@ section {
   max-width: 425px;
 }
 
+
 /* animate page transitions */
+
 section.au-enter-active {
   -webkit-animation: fadeInRight 1s;
   animation: fadeInRight 1s;
@@ -127,7 +168,9 @@ div.au-stagger {
   border: 2px #FFF solid;
 }
 
+
 /* animation definitions */
+
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;

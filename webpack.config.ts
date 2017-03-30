@@ -24,7 +24,7 @@ import * as generateCoverage from '@easy-webpack/config-test-coverage-istanbul';
 const ENV: 'development' | 'production' | 'test' = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = 'development');
 
 // basic configuration:
-const title = 'Aurelia Navigation Skeleton';
+const title = 'Heimdallr';
 const baseUrl = '/';
 const rootDir = path.resolve();
 const srcDir = path.resolve('src');
@@ -85,33 +85,33 @@ let config = generateConfig(
    * Don't be afraid, you can put bits of standard Webpack configuration here
    * (or at the end, after the last parameter, so it won't get overwritten by the presets)
    * Because that's all easy-webpack configs are - snippets of premade, maintained configuration parts!
-   * 
+   *
    * For Webpack docs, see: https://webpack.js.org/configuration/
    */
 
-  ENV === 'test' || ENV === 'development' ? 
-    envDev(ENV !== 'test' ? {} : {devtool: 'inline-source-map'}) :
+  ENV === 'test' || ENV === 'development' ?
+    envDev(ENV !== 'test' ? {} : { devtool: 'inline-source-map' }) :
     envProd({ /* devtool: '...' */ }),
 
-  aurelia({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
+  aurelia({ root: rootDir, src: srcDir, title: title, baseUrl: baseUrl }),
   typescript(ENV !== 'test' ? {} : { options: { doTypeCheck: false, sourceMap: false, inlineSourceMap: true, inlineSources: true } }),
   html(),
   css({ filename: 'styles.css', allChunks: true, sourceMap: false }),
   fontAndImages(),
   globalBluebird(),
   globalJquery(),
-  generateIndexHtml({minify: ENV === 'production'}),
+  generateIndexHtml({ minify: ENV === 'production' }),
 
   ...(ENV === 'production' || ENV === 'development' ? [
-      commonChunksOptimize({appChunkName: 'app', firstChunk: 'aurelia-bootstrap'}),
-      copyFiles({patterns: [{ from: 'favicon.ico', to: 'favicon.ico' }]})
-    ] : [
-    /* ENV === 'test' */
-    generateCoverage({ options: { esModules: true } })
-  ]),
+    commonChunksOptimize({ appChunkName: 'app', firstChunk: 'aurelia-bootstrap' }),
+    copyFiles({ patterns: [{ from: 'favicon.ico', to: 'favicon.ico' }] })
+  ] : [
+      /* ENV === 'test' */
+      generateCoverage({ options: { esModules: true } })
+    ]),
 
   ENV === 'production' ?
-    uglify({debug: false, mangle: { except: ['cb', '__webpack_require__'] }}) : {}
+    uglify({ debug: false, mangle: { except: ['cb', '__webpack_require__'] } }) : {}
 );
 
 module.exports = stripMetadata(config);

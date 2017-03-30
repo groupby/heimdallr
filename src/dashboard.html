@@ -1,0 +1,17 @@
+<template>
+
+  <div class="dash-pager">
+    <button type="button" click.trigger="prev()">Prev Charts</button>
+
+    <div class="dash-group-container">
+      <div repeat.for="group of groups" class="dash-group ${$index === activeIndex ? 'active' : ''}">
+        <div repeat.for="board of group.boards" if.bind="board" class="dash-board ${board.wide ? 'wide' : ''} ${board.tall ? 'tall' : ''}">
+          <compose model.bind="board" view-model="elements/board"></compose>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" click.trigger="next()">Next Charts</button>
+  </div>
+
+</template>
