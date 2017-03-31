@@ -66,6 +66,28 @@ side-nav {
   height: 200px;
 }
 
+/* Logging Styles */
+
+.logging-container {
+  display: flex;
+}
+
+.logging-container .half-container {
+  flex-grow: 1;
+}
+
+.logging-container .half-container h1 {
+  text-align: center;
+}
+
+.logging-container .half-container li {
+  list-style: none;
+}
+
+.logging-container .half-container ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 /* Aurelia Styles */
 
