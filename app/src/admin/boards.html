@@ -5,9 +5,9 @@
     <input type="text" value.bind="name">
 
     <label>Charts:</label>
-    <div repeat.for="chart of charts" class="checkbox">
+    <div repeat.for="chart of allCharts" class="checkbox">
       <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" value.bind="hasChart(chart)">
         ${chart.name}
       </label>
     </div>
@@ -22,6 +22,12 @@
         </div>
       </div>
       ${model.name}
+      <button type="button" click.delegate="onEdit(model)">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button type="button" click.delegate="onDelete(model)">
+        <i class="fa fa-trash"></i>
+      </button>
     </li>
   </ul>
 

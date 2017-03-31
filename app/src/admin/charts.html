@@ -10,6 +10,12 @@
     <li repeat.for="model of models">
       <chart type="bar" data.bind="model.data" style="display: block; width: 100%;"></chart>
       ${model.name}
+      <button type="button" click.delegate="onEdit(model)">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button type="button" click.delegate="onDelete(model)">
+        <i class="fa fa-trash"></i>
+      </button>
     </li>
   </ul>
 

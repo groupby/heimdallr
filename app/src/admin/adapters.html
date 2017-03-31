@@ -15,6 +15,6 @@
   </editor>
   <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
 
-  <model-list models.bind="models"></model-list>
+  <model-list models.bind="models" on-edit.call="onEdit($event)" on-delete.call="onDelete($event)"></model-list>
 
 </template>

@@ -78,6 +78,10 @@ side-nav {
   height: 200px;
 }
 
+.chart-list>li {
+  padding-top: 24px;
+}
+
 .board-thumbnail {
   display: flex;
   height: 100%;
