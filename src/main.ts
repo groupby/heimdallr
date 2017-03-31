@@ -11,8 +11,7 @@ Bluebird.config({ warnings: false });
 
 export async function configure(aurelia: Aurelia) {
   aurelia.use
-    .standardConfiguration()
-    .plugin('aurelia-chart');
+    .standardConfiguration();
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin('aurelia-animator-css');
