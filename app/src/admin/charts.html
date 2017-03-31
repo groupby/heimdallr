@@ -1,8 +1,20 @@
 <template>
 
+  <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
+    <input type="text" value.bind="name">
+
+    <div repeat.for="board of boards" class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        ${board.name}
+      </label>
+    </div>
+  </editor>
+  <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
+
   <ul class="chart-list">
     <li repeat.for="model of models">
-      <chart type="bar" data.bind="dummyData" style="display: block; width: 100%;"></chart>
+      <chart type="bar" data.bind="model.data" style="display: block; width: 100%;"></chart>
       ${model.name}
     </li>
   </ul>

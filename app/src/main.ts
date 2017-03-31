@@ -13,7 +13,9 @@ export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .globalResources('elements/chart')
-    .globalResources('elements/chart-group');
+    .globalResources('elements/chart-group')
+    .globalResources('elements/model-list.html')
+    .globalResources('elements/editor.html');
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin('aurelia-animator-css');

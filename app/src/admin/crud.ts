@@ -1,6 +1,6 @@
 import { HttpClient } from 'aurelia-http-client';
 
-export default class CRUDController {
+abstract class CRUDController {
 
   client: HttpClient = new HttpClient();
   editing: boolean = false;
@@ -26,19 +26,15 @@ export default class CRUDController {
   }
 
   onSave() {
-    if (this['bindFormData']) {
-      const data = this['bindFormData']();
+    const data = this.bindFormData();
+    const request = this.newModel ?
+      this.client.post(`/api/${this.model}`, data) :
+      this.client.put(`/api/${this.model}/${this.editingIndex}`, data);
 
-      const request = this.newModel ?
-        this.client.post(`/api/${this.model}`, data) :
-        this.client.put(`/api/${this.model}/${this.editingIndex}`, data);
-
-      request.then(() => {
-        this.onCancel();
-        this.updateModels();
-      });
-    }
-    this.onCancel();
+    request.then(() => {
+      this.onCancel();
+      this.updateModels();
+    });
   }
 
   onCancel() {
@@ -47,9 +43,7 @@ export default class CRUDController {
   }
 
   onEdit(model: any) {
-    if (this['updateFormData']) {
-      this['updateFormData'](model);
-    }
+    this.updateFormData(model);
     this.editing = true;
     this.editingIndex = model.id;
   }
@@ -62,6 +56,10 @@ export default class CRUDController {
           this.updateModels();
         });
     }
-
   }
+
+  abstract bindFormData(): any;
+  abstract updateFormData(model: any);
 }
+
+export default CRUDController;

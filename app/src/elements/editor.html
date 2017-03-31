@@ -1,0 +1,16 @@
+<template bindable="onSave,onCancel,onCreate">
+  <div class="profile-editor">
+    <slot></slot>
+    <!-- <input type="text" value.bind="name">
+
+    <div repeat.for="board of boards" class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        ${board.name}
+      </label>
+    </div> -->
+
+    <button type="button" click.delegate="onSave()">Save</button>
+    <button type="button" click.delegate="onCancel()">Cancel</button>
+  </div>
+</template>
