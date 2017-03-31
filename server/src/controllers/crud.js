@@ -6,7 +6,7 @@ export default function crudify(data) {
     },
 
     list(ctx) {
-      ctx.body = data;
+      ctx.body = data.map((val, index) => ({ ...val, id: index }));
     },
 
     create(ctx) {

@@ -1,10 +1,14 @@
-<template>
+<template bindable="models,onEdit,onDelete">
 
   <ul class="list-group">
     <li repeat.for="model of models" class="list-group-item">
       ${model.name}
-      <i class="fa fa-pencil"></i>
-      <i class="fa fa-trash"></i>
+      <button type="button" click.delegate="onEdit(model)">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button type="button" click.delegate="onDelete(model)">
+        <i class="fa fa-trash"></i>
+      </button>
     </li>
   </ul>
 

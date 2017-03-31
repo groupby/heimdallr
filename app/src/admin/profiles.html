@@ -1,0 +1,21 @@
+<template>
+  <require from="elements/model-list.html"></require>
+
+  <div if.bind="editing" class="profile-editor">
+    <input type="text" value.bind="name">
+
+    <div repeat.for="board of boards" class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        ${board.name}
+      </label>
+    </div>
+
+    <button type="button" click.delegate="onSave()">Save</button>
+    <button type="button" click.delegate="onCancel()">Cancel</button>
+  </div>
+  <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
+
+  <model-list models.bind="models" on-edit.call="onEdit($event)" on-delete.call="onDelete($event)"></model-list>
+
+</template>
