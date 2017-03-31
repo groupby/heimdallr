@@ -1,4 +1,8 @@
 <template>
   <!-- <chart type="bar" data.bind="dummyData" style="height: ${parentElement.offsetHeight}px; width: ${parentElement.offsetHeight}px; display: block;"></chart> -->
-  <!-- <chart type="bar" data.bind="dummyData" element.ref="chart" style="height: ${chart.parentElement.offsetHeight}px; display: block;"></chart> -->
+  <!-- <chart type="bar" data.bind="dummyData" element.ref="chart" style="height: 50%; display: block; position: relative;"></chart> -->
+  <div style="position: relative; height: 50%;">
+
+    <canvas chart="type: bar; data.bind: dummyData; should-update: true; throttle: 100;"></canvas>
+  </div>
 </template>

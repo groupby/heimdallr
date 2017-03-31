@@ -1,6 +1,10 @@
 export class Board {
 
   dummyData: any = {
+    options: {
+      responseive: true,
+      maintainAspectRatio: false,
+    },
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
