@@ -1,13 +1,7 @@
-export class Charts {
+import CRUDController from './crud';
 
-  charts: any[] = [
-    { name: 'Global QPS' },
-    { name: 'UK QPS' },
-    { name: 'US QPS' },
-    { name: 'StoreFront Builds' },
-    { name: 'Wisdom Builds' },
-    { name: 'New Support Tickets' },
-  ];
+export class Charts extends CRUDController {
+
   dummyData: any = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
@@ -35,4 +29,7 @@ export class Charts {
     ]
   };
 
+  constructor() {
+    super('charts');
+  }
 }
