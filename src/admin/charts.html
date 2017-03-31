@@ -1,0 +1,10 @@
+<template>
+
+  <ul class="chart-list">
+    <li repeat.for="chart of charts">
+      <chart type="bar" data.bind="dummyData" style="display: block; width: 100%;"></chart>
+      ${chart.name}
+    </li>
+  </ul>
+
+</template>

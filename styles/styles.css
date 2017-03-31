@@ -1,43 +1,69 @@
 /* Heimdallr Styles */
 
-.dash-pager {
+.chart-pager {
   height: 100%;
   display: flex;
 }
 
-.dash-group-container {
+.chart-group-container {
   flex-grow: 1;
   /*height: 100%;*/
 }
 
-.dash-group {
-  display: none;
+.chart-group {
   height: 100%;
-}
-
-.dash-group.active {
   display: flex;
   flex-wrap: wrap;
 }
 
-.dash-board {
-  width: 50%;
+.group-chart {
+  position: relative;
   height: 50%;
-  border: 1px solid crimson;
-}
-
-.dash-board.wide {
-  width: 100%;
-}
-
-.dash-board.tall {
-  height: 100%;
+  width: 50%;
 }
 
 .chart-container {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+  /*border: 1px solid crimson;*/
+}
+
+.chart-container.wide {
+  width: 200%;
+}
+
+.chart-container.tall {
+  height: 200%;
+}
+
+chart {
+  display: block;
+  height: 100%;
+  padding: 12px;
+}
+
+
+/* Admin Styles */
+
+.admin-container {
+  display: flex;
+}
+
+side-nav {
+  flex-basis: 150px;
+}
+
+.board-list, .chart-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.board-list>li, .chart-list>li {
+  height: 200px;
 }
 
 

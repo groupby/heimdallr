@@ -1,14 +1,11 @@
 <template>
 
-  <div class="dash-pager">
+  <div class="chart-pager">
     <button type="button" click.trigger="prev()">Prev Charts</button>
 
-    <div class="dash-group-container">
-      <div repeat.for="group of groups" class="dash-group ${$index === activeIndex ? 'active' : ''}">
-        <div repeat.for="board of group.boards" if.bind="board" class="dash-board ${board.wide ? 'wide' : ''} ${board.tall ? 'tall' : ''}">
-          <compose model.bind="board" view-model="elements/board" class="chart-container"></compose>
-        </div>
-      </div>
+    <div class="chart-group-container">
+      <span repeat.for="row of router.navigation"><a href="${row.href}">${row.title}</a></span>
+      <router-view class="chart-group"></router-view>
     </div>
 
     <button type="button" click.trigger="next()">Next Charts</button>

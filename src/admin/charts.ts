@@ -1,10 +1,18 @@
-export class Board {
+export class Charts {
 
+  charts: any[] = [
+    { name: 'Global QPS' },
+    { name: 'UK QPS' },
+    { name: 'US QPS' },
+    { name: 'StoreFront Builds' },
+    { name: 'Wisdom Builds' },
+    { name: 'New Support Tickets' },
+  ];
   dummyData: any = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "My First dataset",
+        label: 'My First dataset',
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -27,7 +35,4 @@ export class Board {
     ]
   };
 
-  activate(model: any) {
-    Object.assign(this, model);
-  }
 }

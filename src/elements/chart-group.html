@@ -1,0 +1,7 @@
+<template>
+  <div repeat.for="board of group.boards" class="group-chart">
+    <div if.bind="board" class="chart-container ${board.wide ? 'wide' : ''} ${board.tall ? 'tall' : ''}">
+      <chart type="bar" data.bind="dummyData" style="display: block; height: 100%;"></chart>
+    </div>
+  </div>
+</template>
