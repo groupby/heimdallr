@@ -1,14 +1,8 @@
 <template>
 
   <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
+    <label>Name:</label>
     <input type="text" value.bind="name">
-
-    <div repeat.for="board of boards" class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        ${board.name}
-      </label>
-    </div>
   </editor>
   <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
 

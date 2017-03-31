@@ -1,12 +1,14 @@
 <template>
 
   <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
+    <label>Name:</label>
     <input type="text" value.bind="name">
 
-    <div repeat.for="board of boards" class="checkbox">
+    <label>Charts:</label>
+    <div repeat.for="chart of charts" class="checkbox">
       <label>
         <input type="checkbox" value="">
-        ${board.name}
+        ${chart.name}
       </label>
     </div>
   </editor>
@@ -14,8 +16,10 @@
 
   <ul class="board-list">
     <li repeat.for="model of models">
-      <div class="">
-        some image placeholder
+      <div class="board-thumbnail">
+        <div repeat.for="i of 4" class="dummy-chart">
+          <div></div>
+        </div>
       </div>
       ${model.name}
     </li>

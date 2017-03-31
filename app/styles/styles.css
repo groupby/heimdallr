@@ -52,12 +52,17 @@ chart {
   display: flex;
 }
 
+.admin-container router-view {
+  width: 100%;
+}
+
 side-nav {
   flex-basis: 150px;
 }
 
 .board-list, .chart-list {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
@@ -66,6 +71,27 @@ side-nav {
 
 .board-list>li, .chart-list>li {
   height: 200px;
+}
+
+.board-list>li {
+  flex-basis: 25%;
+  height: 200px;
+}
+
+.board-thumbnail {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.dummy-chart {
+  flex-basis: 50%;
+  padding: 4px;
+}
+
+.dummy-chart>* {
+  height: 100%;
+  border: 1px solid crimson;
 }
 
 

@@ -1,7 +1,10 @@
 <template>
 
   <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
+    <label>Name:</label>
     <input type="text" value.bind="name">
+    <label>URL:</label>
+    <input type="text" value.bind="url">
 
     <div repeat.for="board of boards" class="checkbox">
       <label>
