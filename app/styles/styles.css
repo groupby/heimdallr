@@ -1,5 +1,11 @@
 /* Heimdallr Styles */
 
+.alphred {
+  position: absolute;
+  right: -20px;
+  top: 0;
+}
+
 .chart-pager {
   height: 100%;
   display: flex;
@@ -121,6 +127,7 @@ side-nav {
   display: flex;
   flex-direction: column-reverse;
 }
+
 
 /* Aurelia Styles */
 
