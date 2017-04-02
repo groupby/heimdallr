@@ -55,13 +55,13 @@
       "name": "Arjen de Blok"
     },
     {
-      "name": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (https://invent.life)"
+      "name": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (http://invent.life)"
     }
   ],
   "bugs": {
-    "url": "https://github.com/aurelia/skeleton-navigation/issues"
+    "url": "http://github.com/aurelia/skeleton-navigation/issues"
   },
-  "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
+  "homepage": "http://github.com/aurelia/skeleton-navigation#readme",
   "aurelia": {
     "build": {
       "resources": []

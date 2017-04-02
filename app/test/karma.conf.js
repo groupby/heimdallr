@@ -1,6 +1,6 @@
 /**
  * Inspired by @AngularClass
- * https://github.com/AngularClass/angular2-webpack-starter
+ * http://github.com/AngularClass/angular2-webpack-starter
  */
 "use strict";
 const path = require('path');
@@ -14,7 +14,7 @@ module.exports = function(config) {
     /*
      * Frameworks to use
      *
-     * available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+     * available frameworks: http://npmjs.org/browse/keyword/karma-adapter
      */
     frameworks: ['jasmine'],
 
@@ -32,7 +32,7 @@ module.exports = function(config) {
 
     /*
      * preprocess matching files before serving them to the browser
-     * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+     * available preprocessors: http://npmjs.org/browse/keyword/karma-preprocessor
      */
     preprocessors: {
       'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
@@ -64,7 +64,7 @@ module.exports = function(config) {
      * test results reporter to use
      *
      * possible values: 'dots', 'progress'
-     * available reporters: https://npmjs.org/browse/keyword/karma-reporter
+     * available reporters: http://npmjs.org/browse/keyword/karma-reporter
      */
     reporters: [ 'mocha', 'coverage', 'karma-remap-istanbul' ],
 
@@ -85,11 +85,11 @@ module.exports = function(config) {
 
     /*
      * start these browsers
-     * available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+     * available browser launchers: http://npmjs.org/browse/keyword/karma-launcher
      */
     browsers: [
       'Chrome',
-      // TODO: https://www.npmjs.com/package/karma-electron
+      // TODO: http://www.npmjs.com/package/karma-electron
     ],
 
     /*

@@ -3,10 +3,10 @@
   <ul class="list-group">
     <li repeat.for="model of models" class="list-group-item">
       ${model.name}
-      <button type="button" click.delegate="onEdit(model)">
+      <button type="button" class="btn btn-default" click.delegate="onEdit(model)">
         <i class="fa fa-pencil"></i>
       </button>
-      <button type="button" click.delegate="onDelete(model)">
+      <button type="button" class="btn btn-default" click.delegate="onDelete(model)">
         <i class="fa fa-trash"></i>
       </button>
     </li>

@@ -1,19 +1,21 @@
 <template>
 
   <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
-    <label>Name:</label>
-    <input type="text" value.bind="name">
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" value.bind="name">
+    </div>
   </editor>
-  <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
+  <button if.bind="!editing" type="button" class="btn btn-default" click.delegate="onCreate()">New</button>
 
   <ul class="chart-list">
     <li repeat.for="model of models">
       <chart type="bar" data.bind="model.data" style="display: block; width: 100%;"></chart>
       ${model.name}
-      <button type="button" click.delegate="onEdit(model)">
+      <button type="button" class="btn btn-default" click.delegate="onEdit(model)">
         <i class="fa fa-pencil"></i>
       </button>
-      <button type="button" click.delegate="onDelete(model)">
+      <button type="button" class="btn btn-default" click.delegate="onDelete(model)">
         <i class="fa fa-trash"></i>
       </button>
     </li>

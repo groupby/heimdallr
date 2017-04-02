@@ -1,4 +1,7 @@
 import crudify from './crud';
+import { io } from '../heimdallr';
+
+
 
 let DUMMY_DATA = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -25,22 +28,6 @@ let DUMMY_DATA = {
   }]
 };
 
-let count = 0;
-
-function loop() {
-  const rand = Math.round(Math.random() * (3000 - 500)) + 500;
-  setTimeout(function() {
-    // change data
-    DUMMY_DATA.labels.push(count += 1);
-    DUMMY_DATA.datasets[0].data.push(Math.floor(Math.random() * 100))
-    console.log(DUMMY_DATA.datasets[0].data);
-    console.log(rand);
-    loop();
-  }, rand);
-}
-
-loop();
-
 const CHARTS = [
   { name: 'Global QPS', data: DUMMY_DATA },
   { name: 'UK QPS', data: DUMMY_DATA },
@@ -50,4 +37,26 @@ const CHARTS = [
   { name: 'New Support Tickets', data: DUMMY_DATA }
 ];
 
-export default crudify(CHARTS);
+const controller = crudify(CHARTS);
+
+let count = 0;
+
+function loop() {
+  const rand = Math.round(Math.random() * (3000 - 500)) + 5000;
+  setTimeout(function() {
+    // change data
+    DUMMY_DATA.labels.push(count += 1);
+    DUMMY_DATA.datasets[0].data.push(Math.floor(Math.random() * 100))
+
+    const ctx = {};
+    controller.list(ctx);
+    ctx.body.forEach((chart) => {
+      io.broadcast(`chart_updated:${chart.id}`, chart);
+    });
+    loop();
+  }, rand);
+}
+
+loop();
+
+export default controller;

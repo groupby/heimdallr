@@ -1,10 +1,10 @@
-const socket = require('socket.io-client')('http://localhost:1337');
+import { socket } from './app';
 
 export class Logging {
+
   activate() {
-    socket.connect();
-    socket.emit('message', { test: 'hi'});
-    socket.on('connect', () => console.log('socketId: ', socket.id));
-    socket.on('stuff', (whatev) => console.log(whatev));
+    socket.on('charts_updated', (charts) => {
+      console.log('ma charts!', charts);
+    });
   }
 }

@@ -56,10 +56,12 @@ chart {
 
 .admin-container {
   display: flex;
+  padding-right: 80px;
 }
 
 .admin-container router-view {
   width: 100%;
+  padding: 24px;
 }
 
 side-nav {
