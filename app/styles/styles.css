@@ -1,5 +1,11 @@
 /* Heimdallr Styles */
 
+.alphred {
+  position: absolute;
+  right: -20px;
+  top: 0;
+}
+
 .chart-pager {
   height: 100%;
   display: flex;
@@ -50,10 +56,12 @@ chart {
 
 .admin-container {
   display: flex;
+  padding-right: 80px;
 }
 
 .admin-container router-view {
   width: 100%;
+  padding: 24px;
 }
 
 side-nav {
@@ -96,6 +104,30 @@ side-nav {
 .dummy-chart>* {
   height: 100%;
   border: 1px solid crimson;
+}
+
+
+/* Logging Styles */
+
+.logging-container {
+  display: flex;
+}
+
+.logging-container .half-container {
+  flex-grow: 1;
+}
+
+.logging-container .half-container h1 {
+  text-align: center;
+}
+
+.logging-container .half-container li {
+  list-style: none;
+}
+
+.logging-container .half-container ul {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 

@@ -1,19 +1,24 @@
 <template>
 
   <editor if.bind="editing" on-save.call="onSave()" on-cancel.call="onCancel()" on-create.call="onCreate()">
-    <label>Name:</label>
-    <input type="text" value.bind="name">
-    <label>URL:</label>
-    <input type="text" value.bind="url">
-
-    <div repeat.for="board of boards" class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        ${board.name}
-      </label>
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" value.bind="name">
+    </div>
+    <div class="form-group">
+      <label>URL:</label>
+      <input type="text" class="form-control" value.bind="url">
+    </div>
+    <div class="form-group">
+      <label>User:</label>
+      <input type="text" class="form-control" value.bind="user">
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" class="form-control" value.bind="password">
     </div>
   </editor>
-  <button if.bind="!editing" type="button" click.delegate="onCreate()">New</button>
+  <button if.bind="!editing" type="button" class="btn btn-default" click.delegate="onCreate()">New</button>
 
   <model-list models.bind="models" on-edit.call="onEdit($event)" on-delete.call="onDelete($event)"></model-list>
 

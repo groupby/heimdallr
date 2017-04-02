@@ -1,6 +1,6 @@
 /**
  * Inspired by @AngularClass
- * https://github.com/AngularClass/angular2-webpack-starter
+ * http://github.com/AngularClass/angular2-webpack-starter
  */
 
 /*

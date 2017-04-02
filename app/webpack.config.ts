@@ -1,7 +1,7 @@
 /// <reference path="./node_modules/@types/node/index.d.ts" />
 /**
  * To learn more about how to use Easy Webpack
- * Take a look at the README here: https://github.com/easy-webpack/core
+ * Take a look at the README here: http://github.com/easy-webpack/core
  **/
 import { generateConfig, get, stripMetadata, EasyWebpackConfig } from '@easy-webpack/core';
 import * as path from 'path';
@@ -86,7 +86,7 @@ let config = generateConfig(
    * (or at the end, after the last parameter, so it won't get overwritten by the presets)
    * Because that's all easy-webpack configs are - snippets of premade, maintained configuration parts!
    *
-   * For Webpack docs, see: https://webpack.js.org/configuration/
+   * For Webpack docs, see: http://webpack.js.org/configuration/
    */
 
   ENV === 'test' || ENV === 'development' ?

@@ -1,7 +1,7 @@
 <template>
   <div repeat.for="chart of charts" class="group-chart">
     <div if.bind="chart" class="chart-container ${chart.wide ? 'wide' : ''} ${chart.tall ? 'tall' : ''}">
-      <chart type="bar" data.bind="chart.data" style="display: block; height: 100%;"></chart>
+      <chart type="bar" data.bind="chart" style="display: block; height: 100%;"></chart>
     </div>
   </div>
 </template>
